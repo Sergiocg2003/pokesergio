@@ -13,6 +13,14 @@
         height: 90px;
         margin-left: 20px;
 
+        &__pokeball{
+            transform: rotate(-19deg);
+        }
+
+        &__lado{
+            transform: rotate(19deg);
+        }
+
         img{
             height: 100%;
         }

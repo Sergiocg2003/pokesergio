@@ -6,15 +6,26 @@ import menuDesplegable from './MenuDesplegable'
 function HeaderBasico(){
   
   const [aparece, setAparece] = useState(false)
+  const [isActive, setActive] = useState(false);
 
   function apareceMenu(){
 
+  }
+
+  const handleToogle = () => {
+    setActive(!isActive);
+  }
+
+  const moverPokeball = setTimeout(handleToogle, 5000);
+
+  if(isActive){
+    clearTimeout(moverPokeball);
   }
   
     return(
       <header className="main">
         <div className="main__logos">
-          <Link to={"/"}><img src={require("../images/Pokeball.png")}/></Link>
+          <Link to={"/"}><img src={require("../images/Pokeball.png")} className={isActive ? "main__logos__pokeball" : "main__logos__lado"}/></Link>
           <Link to={"/"}><img className="nombre" src={require("../images/logo.png")} /></Link>
         </div>
         <ul className="main__navegacion">
