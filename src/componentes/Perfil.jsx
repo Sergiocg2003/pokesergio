@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 import HeaderLogueado from "./HeaderLogueado";
 
 function Perfil(){
+
+    function cambiarColor(e){
+        e.target.style.color = 'blue';
+    }
+
+    function original(e){
+        e.target.style.color = 'black'
+    }
+
     let usuarioLogueado = localStorage.getItem("usuario")
     let correo = localStorage.getItem("correo")
     return(
@@ -12,11 +21,11 @@ function Perfil(){
                 <section className="PrincipalUsuario__seccion">
                     <section className="PrincipalUsuario__seccion__grupo">
                     <p className="PrincipalUsuario__seccion__grupo__Campo">Usuario:</p>
-                    <p className="PrincipalUsuario__seccion__grupo__Info">{usuarioLogueado}</p>
+                    <p className="PrincipalUsuario__seccion__grupo__Info" onMouseOver={cambiarColor} onMouseLeave={original}>{usuarioLogueado}</p>
                     <p className="PrincipalUsuario__seccion__grupo__Campo">Contraseña:</p>
-                    <p className="PrincipalUsuario__seccion__grupo__Info">********</p>
+                    <p className="PrincipalUsuario__seccion__grupo__Info" onMouseOver={cambiarColor} onMouseLeave={original}>********</p>
                     <p className="PrincipalUsuario__seccion__grupo__Campo">Correo:</p>
-                    <p className="PrincipalUsuario__seccion__grupo__Info">{correo}</p>
+                    <p className="PrincipalUsuario__seccion__grupo__Info" onMouseOver={cambiarColor} onMouseLeave={original}>{correo}</p>
                     </section>
                     <table className="PrincipalUsuario__seccion__listado">
                     <tr>
