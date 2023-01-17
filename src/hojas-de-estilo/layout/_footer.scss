@@ -1,0 +1,176 @@
+/*Este css pertenece al pie de pagina de nuestra web aqui podemos ver el css de desktop
+y el de movil separados por una etiqueta media poniendole que se efectue cuando el css baje de 576px*/
+.piePagina{
+    height: 10vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primario;
+
+    /*Aqui le estamos dando un estilo a la lista de logos de nuestras redes sociales*/
+    ul:first-child{
+        margin-inline-start: 2%;
+        margin-inline-end: 2%;
+        li{
+            display: inline;
+            padding-left: 2px;
+            padding-right: 2px;
+            font-size: 120%;
+            color: $color-letra;
+        }
+    }
+
+    /*Aque le estamos dando un tamaño a la foto que esta en el centro de nuestro footer*/
+    img{
+        width: 125px;
+        height: 60px;
+    }
+
+    /*En esta parte de aqui le estamos dando estilo a la lista que tenemos de la politica de cookies y los avisos legales*/
+    ul:last-child{
+        margin-inline-end: 2%;
+        li{
+            display: inline;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: $color-letra;
+            font-family: $fuente;
+            font-size: 15px;
+        }
+    }
+}
+
+/*Aqui vemos la partición para el estilo de móvil*/
+@media (max-width:698px) {
+    .piePagina{
+        height: 12vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-primario;
+
+        /*Aqui le estamos dando un estilo a la lista de logos de nuestras redes sociales*/
+        ul:first-child{
+            margin-inline-start: 2%;
+            margin-inline-end: 2%;
+            li{
+                display: inline;
+                padding-left: 2px;
+                padding-right: 2px;
+                font-size: 120%;
+                color: $color-letra;
+            }
+        }
+
+        /*Aque le estamos dando un tamaño a la foto que esta en el centro de nuestro footer*/
+        img{
+            width: 85px;
+            height: 40px;
+        }
+    
+        /*En esta parte de aqui le estamos dando estilo a la lista que tenemos de la politica de cookies y los avisos legales*/
+        ul:last-child{
+            margin-inline-end: 2%;
+            li{
+                display: inline;
+                padding-left: 10px;
+                padding-right: 10px;
+                color: $color-letra;
+                font-family: $fuente;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+/*Aqui tenemos el css que se va a activar al pasar al modo oscuro*/
+.dark{
+    .piePagina{
+        height: 10vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-primario-oscuro;
+    
+        /*Aqui le estamos dando un estilo a la lista de logos de nuestras redes sociales*/
+        ul:first-child{
+            margin-inline-start: 2%;
+            margin-inline-end: 2%;
+            li{
+                display: inline;
+                padding-left: 2px;
+                padding-right: 2px;
+                font-size: 120%;
+                color: $color-letra;
+            }
+        }
+    
+        /*Aque le estamos dando un tamaño a la foto que esta en el centro de nuestro footer*/
+        img{
+            width: 125px;
+            height: 60px;
+        }
+    
+        /*En esta parte de aqui le estamos dando estilo a la lista que tenemos de la politica de cookies y los avisos legales*/
+        ul:last-child{
+            margin-inline-end: 2%;
+            li{
+                display: inline;
+                padding-left: 10px;
+                padding-right: 10px;
+                color: $color-letra;
+                font-family: $fuente;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+/*Esta es la media query que uso para el css de móvil con modo oscuro*/
+@media (max-width:698px) {
+    .dark{
+        .piePagina{
+            height: 12vh;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $color-primario-oscuro;
+    
+            /*Aqui le estamos dando un estilo a la lista de logos de nuestras redes sociales*/
+            ul:first-child{
+                margin-inline-start: 2%;
+                margin-inline-end: 2%;
+                li{
+                    display: inline;
+                    padding-left: 2px;
+                    padding-right: 2px;
+                    font-size: 120%;
+                    color: $color-letra;
+                }
+            }
+    
+            /*Aque le estamos dando un tamaño a la foto que esta en el centro de nuestro footer*/
+            img{
+                width: 85px;
+                height: 40px;
+            }
+        
+            /*En esta parte de aqui le estamos dando estilo a la lista que tenemos de la politica de cookies y los avisos legales*/
+            ul:last-child{
+                margin-inline-end: 2%;
+                li{
+                    display: inline;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    color: $color-letra;
+                    font-family: $fuente;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

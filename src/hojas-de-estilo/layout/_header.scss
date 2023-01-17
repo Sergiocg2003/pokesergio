@@ -1,0 +1,303 @@
+/*En este archivo de css se encuentran los estilos correspondientes a los diferentes headers de nuestra pagina.*/
+.main{
+    height: 13vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primario;
+
+    /*Aqui le damos un tamaño a las imagenes de los logos y una posicion con los margenes*/
+    &__logos{
+        width: 330px;
+        height: 90px;
+        margin-left: 20px;
+
+        img{
+            height: 100%;
+        }
+    }
+    
+    /*En esta parte le damos los estilos y el posicionamiento a nuestro menú de navegación*/
+    &__navegacion{
+        margin-inline-end: 2%;
+        &__opcion{
+            display: inline;
+            padding-left: 10px;
+            padding-right: 10px;
+            a{
+                font-family: Roboto, sans-serif;
+                text-decoration: none;
+                color: $color-letra;
+            }
+        }
+    }
+    /*Aqui ocultamos el menú desplegable que mostraremos en la variante de móvil*/
+    .menu{
+        display: none;
+    }
+}
+
+/*Este apartado de css es el que se va a mostrar cuando veamos la pagina en el móvil*/
+@media (max-width:698px) {
+    .main{
+        height: 10vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-primario;
+
+        /*Aqui le damos un tamaño a las imagenes de los logos y una posicion con los margenes*/
+        &__logos{
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+    
+            img{
+                height: 100%;
+            }
+            .nombre{
+                display: none;
+            }
+        }
+        
+        /*En esta parte ocultamos nuestro menú de navegación*/
+        &__navegacion{
+            display: none;
+            margin-inline-end: 2%;
+        }
+        /*Aqui mostramos el menú desplegable ya que este css es de móvil*/
+        .menu{
+            display: flex;
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
+
+/*Aqui vemos el css del header que se va a mostrar en las pagina de registro*/
+.registrando{
+    height: 13vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primario;
+
+    /*Aqui le damos un tamaño a las imagenes de los logos y una posicion con los margenes*/
+    &__logos{
+        width: 330px;
+        height: 90px;
+        margin-left: 20px;
+
+        img{
+            height: 100%;
+        }
+    }
+}
+
+/*Aqui vemos el css del header que se va a mostrar en las paginas de registro en la versión de móvil*/
+@media (max-width:698px){
+    .registrando{
+        height: 10vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-primario;
+
+        /*Aqui le damos un tamaño a las imagenes de los logos y una posicion con los margenes*/
+        &__logos{
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+    
+            img{
+                height: 100%;
+            }
+            .nombre{
+                display: none;
+            }
+        }
+    }
+}
+
+/*Aqui vemos el css del header que se va a mostrar en las paginas tras habernos registrado*/
+.mainRegistrado{
+    height: 13vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-primario;
+
+    /*Aqui le damos un tamaño a las imagenes de los logos y una posicion con los margenes*/
+    &__logos{
+        width: 330px;
+        height: 90px;
+        margin-left: 20px;
+
+        img{
+            height: 100%;
+        }
+    }
+    
+    /*En esta parte le damos los estilos y el posicionamiento a nuestro menú de navegación*/
+    &__navegacion{
+        margin-inline-end: 2%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        &__opcion{
+            display: inline;
+            padding-left: 10px;
+            padding-right: 10px;
+            a{
+                text-decoration: none;
+                color: $color-letra;
+                font-family: Roboto, sans-serif;
+            }
+        }
+        /*En esta clase lo que estamos tocando es el tamaño y la posicion de nuestra imagen de perfil del usuario*/
+        &__opcion1{
+            display: inline;
+            padding-left: 10px;
+            padding-right: 10px;
+            a{
+                text-decoration: none;
+                color: $color-letra;
+                img{
+                    height: 70px;
+                    width: 70px;
+                }
+            }
+        }
+    }
+
+    /*Aqui ocultamos el menú desplegable que se mostrara en la versión de móvil*/
+    .menu{
+        display: none;
+    }
+}
+
+/*Aqui vemos el css del header que se va a mostrar en las paginas tras habernos registrado en móvil*/
+@media (max-width:698px) {
+    .mainRegistrado{
+        height: 10vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-primario;
+    
+        /*Aqui le damos un tamaño a las imagenes de los logos y una posicion con los margenes*/
+        &__logos{
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+    
+            img{
+                height: 100%;
+            }
+            .nombre{
+                display: none;
+            }
+        }
+        
+        /*Aqui ocultamos el menú de navegacion de escritorio*/
+        &__navegacion{
+            display: none;
+            margin-inline-end: 2%;
+        }
+
+        /*Aqui mostramos el menú desplegable que tendremos en la versión de móvil*/
+        .menu{
+            display: flex;
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
+
+/*Este es el css que se va a usar cuando veamos la pagina principal en modo oscuro*/
+.dark{
+    .main{
+        height: 13vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-primario-oscuro;
+    
+        /*Aqui le damos un tamaño a las imagenes de los logos y una posicion con los margenes*/
+        &__logos{
+            width: 330px;
+            height: 90px;
+            margin-left: 20px;
+    
+            img{
+                height: 100%;
+            }
+        }
+        
+        /*En esta parte le damos los estilos y el posicionamiento a nuestro menú de navegación*/
+        &__navegacion{
+            margin-inline-end: 2%;
+            &__opcion{
+                display: inline;
+                padding-left: 10px;
+                padding-right: 10px;
+                a{
+                    font-family: $fuente;
+                    text-decoration: none;
+                    color: $color-letra;
+                }
+            }
+        }
+        /*Aqui ocultamos el menú desplegable que mostraremos en la variante de móvil*/
+        .menu{
+            display: none;
+        }
+    }
+}
+
+/*Este apartado de css es el que se va a mostrar cuando veamos la pagina en el móvil en modo oscuro*/
+@media (max-width:698px) {
+    .dark{
+        .main{
+            height: 10vh;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $color-primario-oscuro;
+    
+            /*Aqui le damos un tamaño a las imagenes de los logos y una posicion con los margenes*/
+            &__logos{
+                width: 50px;
+                height: 50px;
+                margin-left: 20px;
+        
+                img{
+                    height: 100%;
+                }
+                .nombre{
+                    display: none;
+                }
+            }
+            
+            /*En esta parte ocultamos nuestro menú de navegación*/
+            &__navegacion{
+                display: none;
+                margin-inline-end: 2%;
+            }
+            /*Aqui mostramos el menú desplegable ya que este css es de móvil*/
+            .menu{
+                display: flex;
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}

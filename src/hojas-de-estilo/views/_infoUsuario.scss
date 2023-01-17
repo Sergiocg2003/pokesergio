@@ -1,0 +1,177 @@
+/*En este css nos encontramos todo lo referente al estilo de nuestra pagina de informacion del usuario*/
+.PrincipalUsuario{
+    height: 77vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    /*Este elemento es el grupo principal en el que se encuentran todos los campos de la información del usuario*/
+    &__seccion{
+        display: flex;
+        flex-direction: row;
+
+        /*En este grupo se le da estilo a algunos elementos de los que muestran la información del ususario*/
+        &__grupo{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            &__Campo{
+                padding: 10px;
+                font-family: $fuente;
+                font-size: 18px;
+                text-decoration: underline;
+                text-align: center;
+            }
+            &__Info{
+                font-family: $fuente;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+
+        /*Este elemento es un listado que tiene lo necesario para darle estilo
+        a la foto de perfil y el nombre de su campo*/
+        &__listado{
+            width: 400px;
+            &__Campo{
+                padding: 10px;
+                font-family: $fuente;
+                font-size: 18px;
+                text-decoration: underline;
+                text-align: center;
+            }
+            &__Info{
+                text-align: center;
+                img{
+                    height: 150px;
+                    width: 150px;
+                }
+            }
+        }
+    }
+
+    /*Aqui se le da estilo al boton que hemos creado para cerrar la sesión ademas de darle un estilo a su hover*/
+    &__Boton{
+        height: 40px;
+        padding: 10px;
+        display: inherit;
+        border-radius: 15px;
+        background-color: #FECA1B;
+        text-decoration: none;
+        font-family: Roboto, sans-serif;
+        font-size: 18px;
+        color: $color-letra-cuerpo;
+        &:hover{
+            background-color:#FF950F;
+            transition-property: all;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+        }
+    }
+
+    /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+    &__Imagen{
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        right: -135px;
+        top: 250px;
+        z-index: -1;
+
+        opacity: 0.37;
+        transform: rotate(-19deg);
+    }
+}
+
+/*En esta media query estamos delimitando cuando a partir de que cantidad de pixeles vamos a partir para diferenciar con el css de movil*/
+@media (max-width:698px) {
+    .PrincipalUsuario{
+        height: 78vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    
+        /*Este elemento es el grupo principal en el que se encuentran todos los campos de la información del usuario*/
+        &__seccion{
+            display: flex;
+            flex-direction: column;
+
+            /*En este grupo se le da estilo a algunos elementos de los que muestran la información del ususario*/
+            &__grupo{
+                display: flex;
+                flex-direction: column;
+                width: 400px;
+                &__Campo{
+                    padding: 10px;
+                    font-family: $fuente;
+                    font-size: 18px;
+                    text-decoration: underline;
+                    text-align: center;
+                }
+                &__Info{
+                    font-family: $fuente;
+                    font-size: 18px;
+                    text-align: center;
+                }
+            }
+        }
+        /*Este elemento es un listado que tiene lo necesario para darle estilo
+        a la foto de perfil y el nombre de su campo*/
+        &__listado{
+            width: 400px;
+            &__Campo{
+                padding: 10px;
+                font-family: $fuente;
+                font-size: 18px;
+                text-decoration: underline;
+                text-align: center;
+            }
+        
+            &__Info{
+                text-align: center;
+                img{
+                    height: 150px;
+                    width: 150px;
+                }
+            }
+        }
+
+        /*Aqui se le da estilo al boton que hemos creado para cerrar la sesión ademas de darle un estilo a su hover*/
+        &__Boton{
+            height: 40px;
+            padding: 10px;
+            display: inherit;
+            border-radius: 15px;
+            background-color: #FECA1B;
+            font-family: Roboto, sans-serif;
+            font-size: 18px;
+            text-decoration: none;
+            color: $color-letra-cuerpo;
+            &:hover{
+                background-color:#FF950F;
+                transition-property: all;
+                transition-duration: 0.5s;
+                transition-timing-function: linear;
+            }
+        }
+
+        /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+        &__Imagen{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -85px;
+            top: 335px;
+            z-index: -1;
+
+            opacity: 0.37;
+            transform: rotate(-19deg);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+/*Este css es un css de reseteo para que no haya ningun tipo de espacio alrededor de la pagina ademas de que algunos elementos como
+el fieldset no tengan borde o que no se vea lo que esta por fuera de la pantalla en el eje x*/
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+fieldset{
+    border: 0;
+    margin-left: 2%;
+}
+
+body{
+    position: relative;
+    overflow-x: hidden;
+}

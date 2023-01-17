@@ -1,0 +1,150 @@
+/*En este archivo css tenemos el css referente a nuestras paginas de vista la producto que
+en mi caso son las cartas de los pokemons*/
+.PrincipalCarta{
+    height: 77vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    /*Aqui le damos estilos a cada uno de los div que forman la carta ademas de a todos los elementos como son las
+    imagenes del pokemon y la información del mismo*/
+    &__fuera{
+        height: 400px;
+        width: 280px;
+        padding: 10px;
+        border-radius: 10px;
+        background: #3761A8;
+        &__dentro{
+            height: 100%;
+            width: 100%;
+            padding: 0px 10px;
+            border-radius: 10px;
+            background: #FECA1B;
+            p{
+                display: inline;
+                font-family: $fuente;
+                font-size: 15px;
+                color: $color-letra-cuerpo;
+            }
+            p:first-child{
+                margin-right: 120px;
+            }
+            p:last-child{
+                margin-left: 25px;
+            }
+            &__ataques{
+                list-style: none;
+                li{
+                    font-family: $fuente;
+                    color: $color-letra-cuerpo;
+                    font-size: 15px;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                }
+                li:last-child{
+                    margin-bottom: 35px;
+                }
+            }
+            &__imagen{
+                height: 120px;
+                width: 100%;
+                background: #3761A8;
+                img{
+                    width: 49%;
+                }
+            }
+        }
+    }
+    
+    /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+    &__Imagen{
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        right: -135px;
+        top: 250px;
+        z-index: -1;
+
+        opacity: 0.37;
+        transform: rotate(-19deg);
+    }
+}
+
+/*Esta es la media query que he usado para diferenciar entre escritorio y móvil en la pagina de la vista del producto*/
+@media (max-width:698px) {
+    .PrincipalCarta{
+        height: 78vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow-x: hidden;
+
+        /*Aqui le damos estilos a cada uno de los div que forman la carta ademas de a todos los elementos como son las
+        imagenes del pokemon y la información del mismo*/
+        &__fuera{
+            height: 400px;
+            width: 280px;
+            padding: 10px;
+            border-radius: 10px;
+            background: #3761A8;
+            &__dentro{
+                height: 100%;
+                width: 100%;
+                padding: 0px 10px;
+                border-radius: 10px;
+                background: #FECA1B;
+                p{
+                    display: inline;
+                    font-family: $fuente;
+                    color: $color-letra-cuerpo;
+                    font-size: 15px;
+                }
+                p:first-child{
+                    margin-right: 120px;
+                }
+                p:last-child{
+                    margin-left: 25px;
+                }
+                &__ataques{
+                    list-style: none;
+                    li{
+                        font-family: $fuente;
+                        color: $color-letra-cuerpo;
+                        font-size: 15px;
+                        margin-top: 20px;
+                        margin-bottom: 10px;
+                    }
+                    li:last-child{
+                        margin-bottom: 35px;
+                    }
+                }
+                &__imagen{
+                    height: 120px;
+                    width: 100%;
+                    background: #3761A8;
+                    img{
+                        width: 49%;
+                    }
+                }
+            }
+        }
+                
+        /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+        &__Imagen{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -85px;
+            top: 335px;
+            z-index: -1;
+
+            opacity: 0.37;
+            transform: rotate(-19deg);
+        }
+    }  
+}

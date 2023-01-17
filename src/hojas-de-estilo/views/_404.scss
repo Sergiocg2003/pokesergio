@@ -1,0 +1,201 @@
+/*Aqui encontramos el css necesario para que la pagina 404 se vea correctamente*/
+.Principal404{
+    height: 77vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    /*Aqui le estamos dando una posicion y un tamaño al gif*/
+    &__gif{
+        width: 10%;
+        position: absolute;
+        justify-content: center;
+        left: 10%;
+    }
+    /*Aqui le estamos dando una posicion y un tamaño al gif*/
+    &__gif2{
+        width: 10%;
+        position: absolute;
+        justify-content: center;
+        right: 10%;
+    }
+
+    /*Aqui posicionamos el contenedor donde esta nuestro mensaje de error*/
+    &__contenedor {
+        position: relative;
+    }
+    
+    /*Aqui le damos un estilo a los dos h2 que tenemos*/
+    &__contenedor h2 {
+        color: $color-animacion;
+        font-size: 300px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
+      
+    /*Aqui le damos un estilo en particular al primer h2*/
+    &__contenedor h2:nth-child(1) {
+        color: transparent;
+        -webkit-text-stroke: 2px $color-primario;
+    }
+    
+    /*Aqui le damos un estilo en particular al segundo h2*/
+    &__contenedor h2:nth-child(2) {
+        color: $color-primario;
+        animation: animate 4s ease-in-out infinite;
+    }
+    
+    /*Este es el keyframe que hace la animacion de nuestra pagina*/
+    @keyframes animate {
+        0%,
+        100% {
+          clip-path: polygon(
+            0% 45%,
+            16% 44%,
+            33% 50%,
+            54% 60%,
+            70% 61%,
+            84% 59%,
+            100% 52%,
+            100% 100%,
+            0% 100%
+          );
+        }
+      
+        50% {
+          clip-path: polygon(
+            0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 62%,
+            67% 50%,
+            84% 45%,
+            100% 46%,
+            100% 100%,
+            0% 100%
+          );
+        }
+    }
+
+    /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+    &__Imagen{
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        right: -135px;
+        top: 250px;
+        z-index: -1;
+
+        opacity: 0.37;
+        transform: rotate(-19deg);
+    }
+}
+
+/*Esta es la media query que he usado para diferenciar entre escritorio y móvil en la pagina 404*/
+@media (max-width:698px) {
+    .Principal404{
+        height: 78vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    
+        /*Aqui le estamos dando una posicion y un tamaño al gif*/
+        &__gif{
+            width: 30%;
+            position: absolute;
+            justify-content: center;
+            top: -60%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        /*Aqui le estamos dando una posicion y un tamaño al gif*/
+        &__gif2{
+            width: 30%;
+            position: absolute;
+            justify-content: center;
+            top: 60%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    
+        /*Aqui posicionamos el contenedor donde esta nuestro mensaje de error*/
+        &__contenedor {
+            position: relative;
+        }
+          
+        /*Aqui le damos un estilo a los dos h2 que tenemos*/
+        &__contenedor h2 {
+            color: $color-animacion;
+            font-size: 150px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+         
+        /*Aqui le damos un estilo en particular al primer h2*/
+        &__contenedor h2:nth-child(1) {
+            color: transparent;
+            -webkit-text-stroke: 2px $color-primario;
+        }
+          
+        /*Aqui le damos un estilo en particular al segundo h2*/
+        &__contenedor h2:nth-child(2) {
+            color: $color-primario;
+            animation: animate 4s ease-in-out infinite;
+        }
+        
+        /*Este es el keyframe que hace la animacion de nuestra pagina*/
+        @keyframes animate {
+            0%,
+            100% {
+              clip-path: polygon(
+                0% 45%,
+                16% 44%,
+                33% 50%,
+                54% 60%,
+                70% 61%,
+                84% 59%,
+                100% 52%,
+                100% 100%,
+                0% 100%
+              );
+            }
+          
+            50% {
+              clip-path: polygon(
+                0% 60%,
+                15% 65%,
+                34% 66%,
+                51% 62%,
+                67% 50%,
+                84% 45%,
+                100% 46%,
+                100% 100%,
+                0% 100%
+              );
+            }
+        }
+
+        /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+        &__Imagen{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -85px;
+            top: 335px;
+            z-index: -1;
+
+            opacity: 0.37;
+            transform: rotate(-19deg);
+        }
+    }
+}

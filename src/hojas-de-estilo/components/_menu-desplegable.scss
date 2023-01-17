@@ -1,0 +1,87 @@
+/*Aqui tenemos el css del menú desplegable y del div que usamos para cerrar este*/
+.menuDesplegable{
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -70%;
+    height: 100%;
+    width: 50%;
+    z-index: 3;
+    background-color: $color-primario;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    
+    &__activo{
+        display: flex;
+        right: 0;
+    }
+
+    /*Aqui le damos estilos a nuestras opciones dentro del menú desplegable*/
+    &__opcion{
+        padding: 12px;
+        color: $color-letra;
+        text-align: center;
+        text-decoration: none;
+        font-family: $fuente;
+    }
+
+    /*Aqui le damos estilos a nuestra foto dentro del menú desplegable*/
+    &__opcion1{
+        padding: 12px;
+        text-align: center;
+        img{
+            height: 60px;
+            width: 60px;
+        }
+    }
+}
+
+/*Este es el css que se va a usar cuando veamos el menu desplegable en modo oscuro*/
+.dark{
+    .menuDesplegable{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -70%;
+        height: 100%;
+        width: 50%;
+        z-index: 3;
+        background-color: $color-primario-oscuro;
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: linear;
+    
+        /*Aqui le damos estilos a nuestras opciones dentro del menú desplegable*/
+        &__opcion{
+            padding: 12px;
+            color: $color-letra;
+            text-align: center;
+            text-decoration: none;
+            font-family: $fuente;
+        }
+    
+        /*Aqui le damos estilos a nuestra foto dentro del menú desplegable*/
+        &__opcion1{
+            padding: 12px;
+            text-align: center;
+            img{
+                height: 60px;
+                width: 60px;
+            }
+        }
+    }
+}
+
+/*Aqui le damos estilo al div que hemos creado para que cuando pulsemos en el se cierre el menú desplegable*/
+.fondo{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+}

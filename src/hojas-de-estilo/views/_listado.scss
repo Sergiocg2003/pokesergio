@@ -1,0 +1,124 @@
+/*Aqui le estamos dando el estilo a los elementos que forman el listado*/
+.PrincipalListado{
+    height: 77vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    
+    /*Este elemento lo estamos usando para darle la posibilidad de hacer scroll a la lista*/
+    &__contenedor{
+        height: 500px;
+        width: 700px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        overflow-y: scroll;
+        z-index: 1;
+
+        /*Aqui le estamos dando un estilo a los elementos que forman la lista es decir a los diferentes campos de esta*/
+        &__carta{
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 10px;
+            background-color: #F0F0C9;
+            
+            &__foto{
+                margin-left: 30px;
+                color: $color-letra-cuerpo;
+            }
+            &__nombre{
+                font-family: $fuente;
+                text-align: center;
+                color: $color-letra-cuerpo;
+            }
+            &__tipo{
+                font-family: $fuente;
+                text-align: center;
+                color: $color-letra-cuerpo;
+            }
+        }
+    }
+
+    /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+    &__Imagen{
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        right: -135px;
+        top: 250px;
+        z-index: -2;
+
+        opacity: 0.37;
+        transform: rotate(-19deg);
+    }
+}
+
+/*Esta es la media query para conseguir que no se nos rompa la pagina al abrir esta pagina en el móvil*/
+@media (max-width:698px) {
+    .PrincipalListado{
+        height: 78vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        
+        /*Este elemento lo estamos usando para darle la posibilidad de hacer scroll a la lista*/
+        &__contenedor{
+            height: 450px;
+            width: 350px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            overflow-y: scroll;
+            z-index: 1;
+
+            a{
+                text-decoration: none;
+            }
+    
+            /*Aqui le estamos dando un estilo a los elementos que forman la lista es decir a los diferentes campos de esta*/
+            &__carta{
+                width: 10rem;
+                height: 10rem;
+                margin-bottom: 10px;
+                background-color: #F0F0C9;
+    
+                &__foto{
+                    color: $color-letra-cuerpo;
+                    margin-left: 30px ;  
+                }
+
+                &__nombre{
+                    font-family: $fuente;
+                    text-align: center;
+                    color: $color-letra-cuerpo;
+                }
+                &__tipo{
+                    font-family: $fuente;
+                    text-align: center;
+                    color: $color-letra-cuerpo;
+                }
+            }
+        }
+    
+        /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+        &__Imagen{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -85px;
+            top: 335px;
+            z-index: -1;
+
+            opacity: 0.37;
+            transform: rotate(-19deg);
+        }
+    }
+}

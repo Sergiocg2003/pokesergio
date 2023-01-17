@@ -1,0 +1,504 @@
+/*Aqui encontramos el css referentes al main del body junto con su variantes para móvil de la pagina principal*/
+
+.Principal{
+    height: 77vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: $color-fondo;
+
+    /*Con esto le estamos dando un tamaño y un estilo de letra a nuestro titulo de la pagina*/
+    &__Titulo{
+        font-size: 45px;
+        font-family: $fuente;
+        color: $color-letra-cuerpo;
+        z-index: 1;
+    }
+
+    /*Aqui le damos un estilo al input del buscador y a su boton que son los dos componentes del mismo */
+    &__Buscador{
+        display: flex;
+        flex-flow: row wrap;
+        padding-bottom: 20px;
+        justify-content: center;
+        align-items: center;
+        li:first-child{
+            width: 500px;
+            display: inline;
+            z-index: 2;
+            input{
+                width: 100%;
+                height: 50px;
+                border-radius: 50px 0px 0px 50px;
+                border: 0;
+                background: $color-buscador;
+                text-indent: 10px;
+            }
+        }
+        li:last-child{
+            display: inline;
+            z-index: 2;
+            a{
+                width: 50px;
+                height: 50px;
+                padding: 6px;
+                display: inherit;
+                border-radius: 0px 50px 50px 0px;
+                background-color: #FECA1B;
+                &:hover{
+                    background-color:#FF950F;
+                    transition-property: all;
+                    transition-duration: 0.5s;
+                    transition-timing-function: linear;
+                }
+                img{
+                    z-index: -1;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    /*Aqui le damos un estilo al boton que tenemos para cambiar el tema de claro a oscuro*/
+    .darkModeSwitch{
+        background: $color-primario;
+        display:flex;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border-radius: 1rem;
+        align-items: center;
+        justify-content: space-between;
+
+        /*Aqui le damos un estilo a los iconos que se ven en nuestro boton*/
+        &__icono{
+            width:30px;
+            height:30px;
+            line-height:30px;
+            display:block;
+            color: $color-letra-cuerpo;
+            background: none;
+        }
+    }
+
+    /*Con esto conseguimos que aparezca una esfera que tapara uno de los dos lados*/
+    .darkModeSwitch::after{
+        display:block;
+        background: #fffbf5;
+        width: 1.9rem;
+        height: 1.9rem;
+        position: absolute;
+        top:0;
+        left:0;
+        right:unset;
+        border-radius: 3rem;
+        transition: all .5s ease;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
+        content: "";
+    }
+    
+    /*Aqui cambiamos el color de fondo para cuando este activo*/
+    .darkModeSwitch.active{
+        background: #fdd384;
+    }
+    .darkModeSwitch.active::after{
+        left:unset;
+        right:0;
+    }
+
+
+    /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+    &__Imagen{
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        right: -135px;
+        top: 250px;
+        z-index: 0;
+
+        opacity: 0.37;
+        transform: rotate(-19deg);
+    }
+}
+
+/*Esta es la media query que hacemos para el css de la versión de móvil*/
+@media (max-width:698px) {
+    .Principal{
+        height: 78vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+
+        /*Con esto le estamos dando un tamaño y un estilo de letra a nuestro titulo de la pagina*/
+        &__Titulo{
+            font-size: 28px;
+            font-family: $fuente;
+            color: $color-letra-cuerpo;
+            z-index: 1;
+        }
+
+        /*Aqui le damos un estilo al input del buscador y a su boton que son los dos componentes del mismo */
+        &__Buscador{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            li:first-child{
+                width: 300px;
+                display: inline;
+                input{
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 40px 0px 0px 40px;
+                    border: 0;
+                    background: $color-buscador;
+                    text-indent: 10px;
+                }
+            }
+            li:last-child{
+                display: inline;
+                a{
+                    width: 40px;
+                    height: 40px;
+                    padding: 6px;
+                    display: inherit;
+                    border-radius: 0px 40px 40px 0px;
+                    background-color: #FECA1B;
+                    &:hover{
+                        background-color:#FF950F;
+                        transition-property: all;
+                        transition-duration: 0.5s;
+                        transition-timing-function: linear;
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+
+        /*Aqui le damos un estilo al boton que tenemos para cambiar el tema de claro a oscuro*/
+        .darkModeSwitch{
+            background: $color-primario;
+            display:flex;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 1rem;
+            align-items: center;
+            justify-content: space-between;
+
+            /*Aqui le damos un estilo a los iconos que se ven en nuestro boton*/
+            &__icono{
+                width:30px;
+                height:30px;
+                line-height:30px;
+                display:block;
+                color: $color-letra-cuerpo;
+                background: none;
+            }
+        }
+
+        /*Con esto conseguimos que aparezca una esfera que tapara uno de los dos lados*/
+        .darkModeSwitch::after{
+            display:block;
+            background: #fffbf5;
+            width: 1.9rem;
+            height: 1.9rem;
+            position: absolute;
+            top:0;
+            left:0;
+            right:unset;
+            border-radius: 3rem;
+            transition: all .5s ease;
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
+            content: "";
+        }
+        
+        /*Aqui cambiamos el color de fondo para cuando este activo*/
+        .darkModeSwitch.active{
+            background: #fdd384;
+        }
+        .darkModeSwitch.active::after{
+            left:unset;
+            right:0;
+        }
+
+        /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+        &__Imagen{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -85px;
+            top: 335px;
+            z-index: 0;
+    
+            opacity: 0.37;
+            transform: rotate(-19deg);
+        }
+    }
+}
+
+/*Aqui tenemos el css que se va a activar al pasar al modo oscuro*/
+.dark{
+    .Principal{
+        height: 77vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background-color: $color-fondo-oscuro;
+    
+        /*Con esto le estamos dando un tamaño y un estilo de letra a nuestro titulo de la pagina*/
+        &__Titulo{
+            font-size: 45px;
+            font-family: $fuente;
+            color: $color-letra-cuerpo-oscuro;
+            z-index: 1;
+        }
+    
+        /*Aqui le damos un estilo al input del buscador y a su boton que son los dos componentes del mismo */
+        &__Buscador{
+            display: flex;
+            flex-flow: row wrap;
+            padding-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            li:first-child{
+                width: 500px;
+                display: inline;
+                input{
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 50px 0px 0px 50px;
+                    border: 0;
+                    background: $color-buscador-oscuro;
+                    text-indent: 10px;
+                }
+            }
+            li:last-child{
+                display: inline;
+                a{
+                    width: 50px;
+                    height: 50px;
+                    padding: 6px;
+                    display: inherit;
+                    border-radius: 0px 50px 50px 0px;
+                    background-color: #FECA1B;
+                    &:hover{
+                        background-color:#FF950F;
+                        transition-property: all;
+                        transition-duration: 0.5s;
+                        transition-timing-function: linear;
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    
+        /*Aqui le damos un estilo al boton que tenemos para cambiar el tema de claro a oscuro*/
+        .darkModeSwitch{
+            background: $color-primario;
+            display:flex;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            border-radius: 1rem;
+            align-items: center;
+            justify-content: space-between;
+    
+            /*Aqui le damos un estilo a los iconos que se ven en nuestro boton*/
+            &__icono{
+                width:30px;
+                height:30px;
+                line-height:30px;
+                display:block;
+                color: $color-letra-cuerpo;
+                background: none;
+            }
+        }
+    
+        /*Con esto conseguimos que aparezca una esfera que tapara uno de los dos lados*/
+        .darkModeSwitch::after{
+            display:block;
+            background: #fffbf5;
+            width: 1.9rem;
+            height: 1.9rem;
+            position: absolute;
+            top:0;
+            left:0;
+            right:unset;
+            border-radius: 3rem;
+            transition: all .5s ease;
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
+            content: "";
+        }
+        
+        /*Aqui cambiamos el color de fondo para cuando este activo*/
+        .darkModeSwitch.active{
+            background: #fdd384;
+        }
+        .darkModeSwitch.active::after{
+            left:unset;
+            right:0;
+        }
+    
+    
+        /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+        &__Imagen{
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            right: -135px;
+            top: 250px;
+            z-index: 0;
+    
+            opacity: 0.37;
+            transform: rotate(-19deg);
+        }
+    }
+}
+
+/*Esta es la media query que uso para el css de móvil con modo oscuro*/
+@media (max-width:698px) {
+    .dark{
+        .Principal{
+            height: 78vh;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+    
+            /*Con esto le estamos dando un tamaño y un estilo de letra a nuestro titulo de la pagina*/
+            &__Titulo{
+                font-size: 28px;
+                font-family: $fuente;
+                color: $color-letra-cuerpo-oscuro;
+                z-index: 1;
+            }
+    
+            /*Aqui le damos un estilo al input del buscador y a su boton que son los dos componentes del mismo */
+            &__Buscador{
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+                z-index: 1;
+                li:first-child{
+                    width: 300px;
+                    display: inline;
+                    input{
+                        width: 100%;
+                        height: 40px;
+                        border-radius: 40px 0px 0px 40px;
+                        border: 0;
+                        background: $color-buscador-oscuro;
+                        text-indent: 10px;
+                    }
+                }
+                li:last-child{
+                    display: inline;
+                    a{
+                        width: 40px;
+                        height: 40px;
+                        padding: 6px;
+                        display: inherit;
+                        border-radius: 0px 40px 40px 0px;
+                        background-color: #FECA1B;
+                        &:hover{
+                            background-color:#FF950F;
+                            transition-property: all;
+                            transition-duration: 0.5s;
+                            transition-timing-function: linear;
+                        }
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+    
+    
+            /*Aqui le damos un estilo al boton que tenemos para cambiar el tema de claro a oscuro*/
+            .darkModeSwitch{
+                background: $color-primario;
+                display:flex;
+                position: relative;
+                cursor: pointer;
+                outline: none;
+                border: none;
+                border-radius: 1rem;
+                align-items: center;
+                justify-content: space-between;
+    
+                /*Aqui le damos un estilo a los iconos que se ven en nuestro boton*/
+                &__icono{
+                    width:30px;
+                    height:30px;
+                    line-height:30px;
+                    display:block;
+                    color: $color-letra-cuerpo;
+                    background: none;
+                }
+            }
+    
+            /*Con esto conseguimos que aparezca una esfera que tapara uno de los dos lados*/
+            .darkModeSwitch::after{
+                display:block;
+                background: #fffbf5;
+                width: 1.9rem;
+                height: 1.9rem;
+                position: absolute;
+                top:0;
+                left:0;
+                right:unset;
+                border-radius: 3rem;
+                transition: all .5s ease;
+                box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
+                content: "";
+            }
+            
+            /*Aqui cambiamos el color de fondo para cuando este activo*/
+            .darkModeSwitch.active{
+                background: #fdd384;
+            }
+            .darkModeSwitch.active::after{
+                left:unset;
+                right:0;
+            }
+    
+            /*Aqui estamos modificando la pokeboll que vemos en el fondo de nuestra pagina*/
+            &__Imagen{
+                position: absolute;
+                width: 300px;
+                height: 300px;
+                right: -85px;
+                top: 335px;
+                z-index: 0;
+        
+                opacity: 0.37;
+                transform: rotate(-19deg);
+            }
+        }
+    }   
+}
