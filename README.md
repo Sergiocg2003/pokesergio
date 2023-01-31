@@ -8,4 +8,4 @@ Tras eso si realizas un npm start ya quedara lanzada.
 
 ### Enlace de la pagina desplegada
 
-
+https://pokesergio.netlify.app
