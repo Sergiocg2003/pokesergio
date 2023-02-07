@@ -12,6 +12,7 @@ import CartaLogueado from './componentes/CartaLogueado';
 import ContactoLogueado from './componentes/ContactoLogueado';
 import Perfil from './componentes/Perfil';
 import ListaLogueado from './componentes/ListaLogueado';
+import Modificar from './componentes/Modificar';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/ListaLogueado' element={<ListaLogueado />} />
         <Route path='/ContactoLogueado' element={<ContactoLogueado />} />
         <Route path='/Perfil' element={<Perfil />} />
+        <Route path='/Modificar' element={<Modificar />} />
       </Routes>
       <Footer />
     </Router>

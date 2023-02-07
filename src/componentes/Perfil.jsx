@@ -37,6 +37,8 @@ function Perfil(){
                     </table>
                 </section>
                 <Link className="PrincipalUsuario__Boton" to={"/"}>Cerrar Sesion</Link>
+                <br/>
+                <Link className="PrincipalUsuario__Boton" to={"/Modificar"}>Editar Perfil</Link>
                 <img className="PrincipalUsuario__Imagen" src={require("../images/Pokeball.png")} />
             </main>
         </>

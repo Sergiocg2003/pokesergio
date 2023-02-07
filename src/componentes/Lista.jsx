@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 function Lista(){
     
     const navegar = useNavigate();
+
     const [poke, setPoke] = useState([]);
     const [tipoSeleccionado, setTipoSeleccionado] = useState({
         grass:false,
