@@ -2,6 +2,7 @@ import React from 'react';
 import '../hojas-de-estilo/main.scss';
 import { Link } from 'react-router-dom';
 
+// Funcion para hacer el header que va a aparecer en el login y en el registro
 function HeaderLogin(){
     return(
       <header className="main">

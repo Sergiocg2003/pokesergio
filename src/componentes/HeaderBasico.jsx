@@ -12,10 +12,12 @@ function HeaderBasico(){
 
   }
 
+  // Funcion para hacer el movimiento de la pokeball
   const handleToogle = () => {
     setActive(!isActive);
   }
 
+  // Declarar cuando se hace el movimiento de la pokeball
   const moverPokeball = setTimeout(handleToogle, 5000);
 
   if(isActive){

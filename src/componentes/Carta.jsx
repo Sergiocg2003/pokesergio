@@ -8,10 +8,21 @@ function Carta(porps){
     const [poke, setPoke] = useState([]);
     const urlBase = 'https://pokeapi.co/api/v2/pokemon/';
     let valores = useLocation()
-    let nombre = valores.state.valor
+    //Variables en caso de tener por ser una llamada a traves del buscador
+    let opcion1 = valores.state['valor']
+    let opcion2 = valores.state
+    let valor;
+    if(!opcion1){
+        valor = opcion2.toLowerCase()
+    }
+    else{
+        valor = opcion1.toLowerCase()
+    }
 
+    console.log(valor)
+    // Llamada a la api
     const ObtenerDatos = async () => {
-        const Datos = await fetch(`${urlBase}${nombre}`);
+        const Datos = await fetch(`${urlBase}${valor}`);
         const pokemon = await Datos.json();
         if (pokemon.name === "ditto"){
             const array = {name: pokemon.name, tipo:pokemon.types[0].type.name, delante: pokemon.sprites.front_default, detras: pokemon.sprites.back_default, 

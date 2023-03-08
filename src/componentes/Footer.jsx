@@ -1,6 +1,7 @@
 import React from 'react';
 import '../hojas-de-estilo/main.scss';
 
+// Funcion para realizar el footer de mi web
 function Footer(){
     return(
         <footer className="piePagina">

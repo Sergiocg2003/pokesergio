@@ -16,6 +16,7 @@ function Registro(){
         errorContraseña: false
     });
 
+    //Funcion para enviar el formulario y que comprueba que no haya fallos
     function handleSubmit(event){
         
         event.preventDefault();
@@ -30,7 +31,7 @@ function Registro(){
                     navegar("/Logueado");
                 }
                 else{
-                    alert("Tu contraseña no cumple los requisitos de longitud (min 8 y max 15 caracteres) o contiene caracteres que no son validos. Caracteres validos: (letras y numeros).");
+                    alert("Tu contraseña no cumple los requisitos de longitud (min 8 y max 15 caracteres) o no contiene todos los caracteres necesarios. Caracteres validos: (1 letra minuscula, 1 letra mayuscula, 1 numero y un caracter especial)");
                 }
             }
             else{
@@ -42,6 +43,7 @@ function Registro(){
         }
     }
 
+    //Funcion para ir actualizando lo que escribimos en el input
     function handleChange(event){
         // console.log(event.target.name);
         // console.log(event.target.value);
@@ -49,6 +51,7 @@ function Registro(){
         setValores({...valores, [event.target.name] : event.target.value})
     }
 
+    //Funcion para comprobar los fallos del correo
     function handleFalloCorreo(){
         let correoValido = false;
         const expReg = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/g
@@ -63,6 +66,7 @@ function Registro(){
         setValores((prevState) => ({...prevState, errorCorreo}));
     }
 
+    //Funcion para comprobar los fallos en el usuario
     function handleFalloUsuario(){
         let usuarioValido = false;
         const expReg = /^[A-Za-z0-9]{3,12}$/g
@@ -77,9 +81,10 @@ function Registro(){
         setValores((prevState) => ({...prevState, errorUsuario}));
     }
 
+    //Funcion para comprobar los fallos en la contraseña
     function handleFalloContraseña(){
         let contraseñaValida = false;
-        const expReg = /^[A-Za-z0-9]{8,15}$/g
+        const expReg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$/
 
         //console.log(valores.contraseña)
 

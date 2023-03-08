@@ -16,6 +16,7 @@ function ContactoLogueado(){
         errorTelefono: false
     });
 
+    // Funcion para enviar el formulario comprobando que no haya errores
     function handleSubmit(event){
         
         event.preventDefault();
@@ -38,6 +39,7 @@ function ContactoLogueado(){
         }
     }
 
+    // Funcion para ir actualizando lo que ponemos en los inputs
     function handleChange(event){
         // console.log(event.target.name);
         // console.log(event.target.value);
@@ -45,6 +47,7 @@ function ContactoLogueado(){
         setValores({...valores, [event.target.name] : event.target.value})
     }
 
+    // Funcion para comprobar que el correo cumple con los requisitos
     function handleFalloCorreo(){
         let correoValido = false;
         const expReg = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/g
@@ -59,6 +62,7 @@ function ContactoLogueado(){
         setValores((prevState) => ({...prevState, errorCorreo}));
     }
 
+    // Funcion para comprobar que el usuario cumple con los requisitos
     function handleFalloUsuario(){
         let usuarioValido = false;
         const expReg = /^[A-Za-z0-9]{3,12}$/g
@@ -73,9 +77,10 @@ function ContactoLogueado(){
         setValores((prevState) => ({...prevState, errorUsuario}));
     }
 
+    // Funcion para comprobar que el telefono cumple con los requisitos
     function handleFalloTelefono(){
         let telefonoValido = false;
-        const expReg = /^[0-9]{9}$/g
+        const expReg = /^[0-9]{6,9}$/g
 
         if(expReg.test(valores.telefono)){
             telefonoValido = true;

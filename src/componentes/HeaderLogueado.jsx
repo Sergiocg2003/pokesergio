@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../hojas-de-estilo/main.scss';
 
+// Funcion para realizar el header que veremos cuando estemos logueados
 function HeaderLogueado(){
   let usuarioLogueado = localStorage.getItem("usuario")
     return(

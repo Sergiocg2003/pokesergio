@@ -7,6 +7,7 @@ function Logueado(){
 
     const [valor, setValor] = useState('');
 
+    //Funcion para ir actualizando lo que escribimos en el input
     function handleChange(event){
         setValor(event.target.value)
     }

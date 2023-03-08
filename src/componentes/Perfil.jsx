@@ -4,10 +4,12 @@ import HeaderLogueado from "./HeaderLogueado";
 
 function Perfil(){
 
+    //Funcion para cambiar el color de un elemento cuando el raton se ponga encima
     function cambiarColor(e){
         e.target.style.color = 'blue';
     }
 
+    //Funcion para revertir el cambio de color
     function original(e){
         e.target.style.color = 'black'
     }

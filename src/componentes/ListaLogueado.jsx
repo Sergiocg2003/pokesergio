@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import '../hojas-de-estilo/main.scss';
 import { useNavigate } from "react-router-dom";
 import HeaderLogueado from "./HeaderLogueado";
+import { Link } from 'react-router-dom';
 
 
 function ListaLogueado(){
@@ -30,7 +31,7 @@ function ListaLogueado(){
         unknow:false,
         shadow:false
     });
-    const [pokeFiltrados, setPokeFiltrados] = useState([]);
+
     const urlBase = 'https://pokeapi.co/api/v2/';
 
     
@@ -56,19 +57,15 @@ function ListaLogueado(){
         })
 
         if(e.target.checked){
-            const resultadoFiltrado = ObtenerDatos.filter(poke = poke.map((item) => {item.types.map(tipo => tipo.type.name).includes(e.target.name)}));
-            setPokeFiltrados(resultadoFiltrado)
+            const resultadoFiltrado = poke.filter(pokemon => pokemon.types.map(tipo => tipo.type.name).includes(e.target.name));
+            setPoke(resultadoFiltrado)
         }
-
+        
     }
 
     useEffect(() => {
         ObtenerDatos();
     }, []);
-
-    function handleClic(e){
-        navegar("/Carta");
-    }
    
     return (
         <>
@@ -163,16 +160,18 @@ function ListaLogueado(){
                 {
                     poke.map((item) => {
                         return(
-                            <div className='PrincipalListado__contenedor__carta' id={item.id} key={item.id} onClick={handleClic}>
-                                <img className="PrincipalListado__contenedor__carta__foto" src={item.sprites.front_default} alt='pokemon' />
-                                <h5 className='PrincipalListado__contenedor__carta__nombre'>{item.name}</h5>
-                                {
-                                    item.types.map(type => (
-                                        <h6 className='PrincipalListado__contenedor__carta__tipo'>type: {type.type.name}</h6>
-                                    ))
-                                }
-                                
-                            </div>
+                            <Link to={"/CartaLogueado"} state={item.name}>
+                                <div className='PrincipalListado__contenedor__carta' id={item.id} key={item.id}>
+                                    <img className="PrincipalListado__contenedor__carta__foto" src={item.sprites.front_default} alt='pokemon' />
+                                    <h5 className='PrincipalListado__contenedor__carta__nombre'>{item.name}</h5>
+                                    {
+                                        item.types.map(type => (
+                                            <h6 className='PrincipalListado__contenedor__carta__tipo'>type: {type.type.name}</h6>
+                                        ))
+                                    }
+                                    
+                                </div>
+                            </Link>
                         )
                     })
                 }

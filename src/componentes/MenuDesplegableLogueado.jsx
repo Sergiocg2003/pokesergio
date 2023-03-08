@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../hojas-de-estilo/main.scss';
 
+// Funcion para hacer el menu desplegable
 function MenuDesplegableLogueado(){
     let usuarioLogueado = localStorage.getItem("usuario")
     return(

@@ -12,6 +12,7 @@ function Modificar(){
         errorUsuario: false
     });
 
+    //Funcion para enviar el formulario y comprueba que el usuario no tenga fallos
     function handleSubmit(event){
         
         event.preventDefault();
@@ -26,6 +27,7 @@ function Modificar(){
         }
     }
 
+    //Funcion para ir actualizando lo que escribimos en el input
     function handleChange(event){
         // console.log(event.target.name);
         // console.log(event.target.value);
@@ -33,6 +35,7 @@ function Modificar(){
         setValores({...valores, [event.target.name] : event.target.value})
     }
 
+    //Funcion que comprueba que el usuario cumpla con los requisitos
     function handleFalloUsuario(){
         let usuarioValido = false;
         const expReg = /^[A-Za-z0-9]{3,12}$/g
@@ -52,9 +55,9 @@ function Modificar(){
             <HeaderLogueado/>
             <main className="registroycontacto">
                 <form className="registroycontacto__formulario" onSubmit={handleSubmit}>
-                    <p className="registroycontacto__formulario__texto">Usuario:</p>
+                    <p className="registroycontacto__formulario__texto">Nuevo nombre de usuario:</p>
                     <input className="registroycontacto__formulario__rellenable" type="text" name="usuario" placeholder="Usuario min 3 caracteres" onChange={handleChange} onBlur={handleFalloUsuario} required/>
-                    <button type="submit" className="registroycontacto__formulario__boton">Iniciar Sesión</button>
+                    <button type="submit" className="registroycontacto__formulario__boton">Guardar</button>
                 </form>
                 <img className="registroycontacto__Imagen" src={require("../images/Pokeball.png")} />
             </main>
